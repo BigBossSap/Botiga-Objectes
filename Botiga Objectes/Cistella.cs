@@ -34,40 +34,47 @@ namespace Botiga_Objectes
         public int AfegirProducteCistella(Producte producte, int quantitat)
         {
             // 0 = no hi ha diners, 1=afegit, -1 No afegit per espai.
-            int num = 0;
+            int num = -1;
             
             bool trobat = false;
             int posBuscar = 0;
 
-            if (Moneder - producte.Preu * quantitat >= 0)
+            for (int j=0; j < quantitat && posBuscar < ProductesCistella.Length; j++)
             {
-                while ((ProductesCistella[posBuscar] != null) || (trobat == false) && (posBuscar < ProductesCistella.Length))
+                if (Moneder - producte.PreuProducte() * quantitat >= 0)
                 {
-                    if (ProductesCistella[posBuscar] == null)
+                    while ((ProductesCistella[posBuscar] != null) || (trobat == false) && (posBuscar < ProductesCistella.Length))
                     {
-                        trobat = true;
+                        if (ProductesCistella[posBuscar] == null)
+                        {
+                            trobat = true;
+                        }
+
+                        else
+                            posBuscar++;
+
+
                     }
 
-                    else
-                        posBuscar++;
+                    if (trobat)
+                    {
+                        ProductesCistella[posBuscar] = producte;
+                        NelementsCistella++;
+                        num = 1;
+                    }
+
+
+
 
 
                 }
 
-                if (trobat)
-                {
-                    ProductesCistella[posBuscar] = producte;                                    
-                    NelementsCistella++;
-                }
-
-                if (!trobat)
-                    num = -1;
+                else
+                    num = 0;
 
                
 
             }
-
-            
                 
             return num;
 
@@ -76,6 +83,20 @@ namespace Botiga_Objectes
 
 
 
+        }
+
+        public double CostTotal()
+        {
+            double costTotal=0;
+
+            for (int i = 0; i < NelementsCistella; i++) {
+
+                costTotal += ProductesCistella[i].Preu;
+
+                    }
+
+
+            return costTotal;
         }
 
 

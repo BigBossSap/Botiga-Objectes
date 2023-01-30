@@ -8,7 +8,7 @@ namespace Botiga_Objectes
         {
             Producte producte = new Producte();
             Botiga botiga = new Botiga();
-            Cistella cistella = new Cistella(2000);
+            Cistella cistella = new Cistella(200);
 
             producte.CreaProducte("taula", 100, 21);
 
@@ -22,18 +22,21 @@ namespace Botiga_Objectes
 
 
 
-            Console.WriteLine(botiga.AfegirProducte(producte));
-
+            
             
 
             int num = 1;
             switch(num)
             {
+
                 case 1:
-                if(cistella.AfegirProducteCistella(producte, 3)==0)
+                    int result = cistella.AfegirProducteCistella(producte,25);
+                if (result==0)
                         Console.WriteLine("No money");
-                else if(cistella.AfegirProducteCistella(producte, 3)==-1)
+                else if(result==-1)
                         Console.WriteLine("No space");
+                else
+                        Console.WriteLine("Producte afegit");
 
                 break;
             }
