@@ -11,7 +11,7 @@ namespace Botiga_Objectes
 
         public string Data { get; set; }
 
-        private Cistella[] ProductesCistella;
+        private Producte[] ProductesCistella;
 
         private int NelementsCistella;
 
@@ -22,7 +22,7 @@ namespace Botiga_Objectes
         {
             
             Moneder = diners;
-            ProductesCistella = new Cistella[20];
+            ProductesCistella = new Producte[20];
             NelementsCistella = 0;
 
         }
@@ -31,37 +31,45 @@ namespace Botiga_Objectes
         //       tantes vegades com indiqui quantitat.
 
 
-        public bool AfegirProducteCistella(Producte producte, int quantitat)
+        public int AfegirProducteCistella(Producte producte, int quantitat)
         {
-
-
-            bool afegit = false;
+            // 0 = no hi ha diners, 1=afegit, -1 No afegit per espai.
+            int num = 0;
+            
             bool trobat = false;
             int posBuscar = 0;
 
-
-            while ((ProductesCistella[posBuscar] != null) || (trobat == false) && (posBuscar < ProductesCistella.Length))
+            if (Moneder - producte.Preu * quantitat >= 0)
             {
-                if (ProductesCistella[posBuscar] == null)
+                while ((ProductesCistella[posBuscar] != null) || (trobat == false) && (posBuscar < ProductesCistella.Length))
                 {
-                    trobat = true;
+                    if (ProductesCistella[posBuscar] == null)
+                    {
+                        trobat = true;
+                    }
+
+                    else
+                        posBuscar++;
+
+
                 }
 
-                else
-                    posBuscar++;
+                if (trobat)
+                {
+                    ProductesCistella[posBuscar] = producte;                                    
+                    NelementsCistella++;
+                }
 
+                if (!trobat)
+                    num = -1;
+
+               
 
             }
 
-            if (trobat)
-            {
-                ProductesCistella[posBuscar] = producte;
-                afegit = true;
-                NelementsCistella++;
-            }
-
-
-            return afegit;
+            
+                
+            return num;
 
 
 

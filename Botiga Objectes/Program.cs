@@ -24,7 +24,19 @@ namespace Botiga_Objectes
 
             Console.WriteLine(botiga.AfegirProducte(producte));
 
-            cistella.AfegirProducteCistella(producte, 3, botiga);
+            
+
+            int num = 1;
+            switch(num)
+            {
+                case 1:
+                if(cistella.AfegirProducteCistella(producte, 3)==0)
+                        Console.WriteLine("No money");
+                else if(cistella.AfegirProducteCistella(producte, 3)==-1)
+                        Console.WriteLine("No space");
+
+                break;
+            }
 
         }
     }
