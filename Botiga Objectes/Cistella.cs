@@ -18,7 +18,7 @@ namespace Botiga_Objectes
         public double Moneder;
 
 
-        public Cistella(string nomBotiga, double diners)
+        public Cistella( double diners)
         {
             
             Moneder = diners;
@@ -27,6 +27,23 @@ namespace Botiga_Objectes
 
         }
 
-        
+        //       ComprarProducte(Producte producte, int quantitat) : Afegeix un producte
+        //       tantes vegades com indiqui quantitat.
+
+
+        public bool AfegirProducteCistella(Producte producte, int quantitat)
+        {
+
+            int i = 0;
+            
+
+
+
+
+
+
+        }
+
+
     }
 }

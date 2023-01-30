@@ -8,6 +8,7 @@ namespace Botiga_Objectes
         {
             Producte producte = new Producte();
             Botiga botiga = new Botiga();
+            Cistella cistella = new Cistella(2000);
 
             producte.CreaProducte("taula", 100, 21);
 
@@ -23,7 +24,7 @@ namespace Botiga_Objectes
 
             Console.WriteLine(botiga.AfegirProducte(producte)); 
 
-
+            cistella.AfegirProducteCistella(botiga.)
 
         }
     }
