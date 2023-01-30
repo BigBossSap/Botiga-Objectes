@@ -12,7 +12,7 @@ namespace Botiga_Objectes
 
         public string Nom { get; set; }
 
-        private Producte[] Productes;
+        private Producte[] ProductesCistella;
 
         private int Nelements;
 
@@ -20,7 +20,7 @@ namespace Botiga_Objectes
 
         public Botiga()
         {
-            Productes = new Producte[10];
+            ProductesCistella = new Producte[10];
             Nelements = 0;
 
 
@@ -33,9 +33,9 @@ namespace Botiga_Objectes
             int posBuscar=0;
             
 
-            while((Productes[posBuscar] != null) || (trobat==false)&& (posBuscar<Productes.Length))
+            while((ProductesCistella[posBuscar] != null) || (trobat==false)&& (posBuscar<ProductesCistella.Length))
             {
-                if (Productes[posBuscar] == null)
+                if (ProductesCistella[posBuscar] == null)
                 {
                     trobat = true;
                 }
@@ -47,7 +47,7 @@ namespace Botiga_Objectes
             }
 
             if (trobat) {
-                Productes[posBuscar] = Producte;
+                ProductesCistella[posBuscar] = Producte;
                 afegit = true;
                 Nelements++;
             }
