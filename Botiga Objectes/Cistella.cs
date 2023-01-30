@@ -34,8 +34,34 @@ namespace Botiga_Objectes
         public bool AfegirProducteCistella(Producte producte, int quantitat)
         {
 
-            int i = 0;
-            
+
+            bool afegit = false;
+            bool trobat = false;
+            int posBuscar = 0;
+
+
+            while ((ProductesCistella[posBuscar] != null) || (trobat == false) && (posBuscar < ProductesCistella.Length))
+            {
+                if (ProductesCistella[posBuscar] == null)
+                {
+                    trobat = true;
+                }
+
+                else
+                    posBuscar++;
+
+
+            }
+
+            if (trobat)
+            {
+                ProductesCistella[posBuscar] = producte;
+                afegit = true;
+                NelementsCistella++;
+            }
+
+
+            return afegit;
 
 
 

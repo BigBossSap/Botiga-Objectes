@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Botiga_Objectes
 {
-    class Producte
+   public class Producte
     {
         public string Nom { get; set; }
         public double Preu { get; set; }

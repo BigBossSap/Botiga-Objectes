@@ -22,9 +22,9 @@ namespace Botiga_Objectes
 
 
 
-            Console.WriteLine(botiga.AfegirProducte(producte)); 
+            Console.WriteLine(botiga.AfegirProducte(producte));
 
-            cistella.AfegirProducteCistella(botiga.)
+            cistella.AfegirProducteCistella(producte, 3, botiga);
 
         }
     }

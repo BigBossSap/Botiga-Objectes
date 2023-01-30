@@ -12,7 +12,7 @@ namespace Botiga_Objectes
 
         public string Nom { get; set; }
 
-        private Producte[] ProductesBotiga;
+        public Producte[] ProductesBotiga;
 
         private int Nelements;
 
