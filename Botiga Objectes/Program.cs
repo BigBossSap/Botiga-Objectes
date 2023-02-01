@@ -15,13 +15,14 @@ namespace Botiga_Objectes
             botiga.AfegirProducte(taula);
             botiga.AfegirProducte(cadira);
             botiga.AfegirProducte(mesa);
-            Console.WriteLine(botiga.BuscarProducte(cadira)); 
+            Console.WriteLine(botiga.BotigaText());
+            Console.WriteLine(botiga.BuscarProducte(mesa)); 
 
             Console.WriteLine(taula.LlistarProducte());
             Console.WriteLine(cadira.LlistarProducte());
             Console.WriteLine(cadira.LlistarProducte());
 
-
+            Console.WriteLine(taula.PreuProducte()); 
 
             int num = 1;
             switch(num)
