@@ -58,16 +58,37 @@ namespace Botiga_Objectes
 
         }
 
-        public int BuscarProducte(Producte producte)
+        private int BuscarProducte(Producte producte)
         {
             int pos = -1;
             int cont = 0;
-            for(int i=0; i<Nelements;i++)
+            for(int i=0; i< ProductesBotiga.Length; i++)
             {
                 if (ProductesBotiga[i].Nom == producte.Nom)
                     pos = cont;
 
              cont++;
+            }
+
+
+
+            return pos;
+
+        }
+
+        public int BuscarProducte(string producte)
+        {
+            int pos = -1;
+            int cont = 0;
+            bool trobat = false;
+            for (int i = 0; i < ProductesBotiga.Length&&trobat==false; i++)
+            {
+                if (ProductesBotiga[i].Nom.Equals(producte))
+                {
+                    pos = cont;
+                    trobat = true;
+                }
+                cont++;
             }
 
 
@@ -113,6 +134,7 @@ namespace Botiga_Objectes
                 int pos = BuscarProducte(producte);
                 ProductesBotiga[pos] = null;
                 esborrat = true;
+                Nelements--;
             }
 
 
