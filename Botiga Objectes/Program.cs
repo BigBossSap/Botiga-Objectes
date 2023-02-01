@@ -9,7 +9,7 @@ namespace Botiga_Objectes
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             //Productes, taules:
-
+            
             Producte taula = new Producte("taula", 100, 21);
             Producte cadira = new Producte("cadira", 80, 16);
             Producte mesa = new Producte("mesa", 75, 8);
@@ -19,6 +19,10 @@ namespace Botiga_Objectes
             botiga.AfegirProducte(taula);
             botiga.AfegirProducte(cadira);
             botiga.AfegirProducte(mesa);
+
+            menutest menu = new menutest();
+
+            menu.MostrarMenu();
             //Console.WriteLine(botiga.BotigaText());
             //Console.WriteLine(botiga.BuscarProducte(mesa)); 
 

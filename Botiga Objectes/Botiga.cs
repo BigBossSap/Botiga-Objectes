@@ -180,13 +180,14 @@ namespace Botiga_Objectes
             string botigaText = "";
 
 
-            for (int i = 0; i < Nelements; i++)
+            for (int i = 0; i < ProductesBotiga.Length; i++)
             {
-
-                botigaText += $"Nom: {ProductesBotiga[i].Nom}\n";
-                botigaText += $"Preu: {ProductesBotiga[i].Preu}€ \n";
-                botigaText += $"IVA: {ProductesBotiga[i].Iva}€\n";
-
+                if (ProductesBotiga[i] != null)
+                {
+                    botigaText += $"Nom: {ProductesBotiga[i].Nom}\n";
+                    botigaText += $"Preu: {ProductesBotiga[i].Preu}€ \n";
+                    botigaText += $"IVA: {ProductesBotiga[i].Iva}€\n";
+                }
 
 
             }
