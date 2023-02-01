@@ -104,11 +104,11 @@ namespace Botiga_Objectes
 
                 cistellaText += ProductesCistella[i].Nom + "\n";
                 cistellaText += ProductesCistella[i].Preu + "\n";
-                cistellaText += CostTotal();
+                
 
             }
 
-
+            cistellaText += CostTotal();
 
             return cistellaText;
 

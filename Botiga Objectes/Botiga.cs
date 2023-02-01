@@ -162,8 +162,8 @@ namespace Botiga_Objectes
             {
 
                 botigaText += $"Nom: {ProductesBotiga[i].Nom}\n";
-                botigaText += $"Preu: {ProductesBotiga[i].Preu} \n";
-                botigaText += $"IVA: {ProductesBotiga[i].Iva}\n";
+                botigaText += $"Preu: {ProductesBotiga[i].Preu}€ \n";
+                botigaText += $"IVA: {ProductesBotiga[i].Iva}€\n";
 
 
 

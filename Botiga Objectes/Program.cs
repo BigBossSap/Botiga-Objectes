@@ -6,6 +6,9 @@ namespace Botiga_Objectes
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+
             Producte taula = new Producte("taula", 100, 21);
             Producte cadira = new Producte("cadira", 80, 16);
             Producte mesa = new Producte("mesa", 75, 8);
