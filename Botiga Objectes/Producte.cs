@@ -15,7 +15,7 @@ namespace Botiga_Objectes
 
 
 
-        public void CreaProducte(string producte, double preu, double iva)
+        public Producte(string producte, double preu, double iva)
         {
             Nom = producte;
             Preu = preu;

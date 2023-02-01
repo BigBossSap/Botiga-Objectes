@@ -6,31 +6,29 @@ namespace Botiga_Objectes
     {
         static void Main(string[] args)
         {
-            Producte producte = new Producte();
-            Botiga botiga = new Botiga();
+            Producte taula = new Producte("taula", 100, 21);
+            Producte cadira = new Producte("cadira", 80, 16);
+            Producte mesa = new Producte("mesa", 75, 8);
+            Botiga botiga = new Botiga(20);
             Cistella cistella = new Cistella(20000);
 
-            producte.CreaProducte("taula", 100, 21);
+            botiga.AfegirProducte(taula);
+            botiga.AfegirProducte(cadira);
+            botiga.AfegirProducte(mesa);
+            Console.WriteLine(botiga.BuscarProducte(cadira)); 
+
+            Console.WriteLine(taula.LlistarProducte());
+            Console.WriteLine(cadira.LlistarProducte());
+            Console.WriteLine(cadira.LlistarProducte());
 
 
-            Console.WriteLine(producte.LlistarProducte());
-
-            botiga.AfegirProducte(producte);
-           
-
-
-
-
-
-            
-            
 
             int num = 1;
             switch(num)
             {
 
                 case 1:
-                    int result = cistella.AfegirProducteCistella(producte,25);
+                    int result = cistella.AfegirProducteCistella(taula,5);
                 if (result==0)
                         Console.WriteLine("No money");
                 else if(result==-1)
@@ -41,6 +39,8 @@ namespace Botiga_Objectes
                 break;
             }
 
+            
+            Console.WriteLine(cistella.CistellaText());
         }
     }
 }

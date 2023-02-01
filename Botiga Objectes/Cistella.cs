@@ -34,53 +34,42 @@ namespace Botiga_Objectes
         public int AfegirProducteCistella(Producte producte, int quantitat)
         {
             // 0 = no hi ha diners, 1=afegit, -1 No afegit per espai.
-            int num = -1;
+            int resultat = -1;
             
             bool trobat = false;
             int posBuscar = 0;
 
-            for (int j=0; j < quantitat && posBuscar < ProductesCistella.Length; j++)
+
+            if (Moneder - producte.PreuProducte() * quantitat >= 0)
             {
-                if (Moneder - producte.PreuProducte() * quantitat >= 0)
+                for (int j = 0; j < quantitat && posBuscar < ProductesCistella.Length; j++)
                 {
-                    while ((ProductesCistella[posBuscar] != null) || (trobat == false) && (posBuscar < ProductesCistella.Length))
+                    bool fi = false;
+                    while (posBuscar < ProductesCistella.Length && !fi)
                     {
                         if (ProductesCistella[posBuscar] == null)
                         {
-                            trobat = true;
+                            ProductesCistella[posBuscar] = producte;
+                            NelementsCistella++;
+                            resultat = 1;
+                            fi = true;
                         }
-
                         else
+                        {
                             posBuscar++;
-
-
+                            if (posBuscar >= ProductesCistella.Length)
+                            {
+                                resultat = -1;
+                                fi = true;
+                            }
+                        }
                     }
-
-                    if (trobat)
-                    {
-                        ProductesCistella[posBuscar] = producte;
-                        NelementsCistella++;
-                        num = 1;
-                    }
-
-
-
-
-
                 }
-
-                else
-                    num = 0;
-
-               
-
             }
-                
-            return num;
+            else
+                resultat = 0;
 
-
-
-
+            return resultat;
 
 
         }
@@ -99,6 +88,31 @@ namespace Botiga_Objectes
             return costTotal;
         }
 
+        //ToString() : retorna de forma amigable un string amb tots els 
+        //    productes.Retorna també el total amb iva inclòs.
+        //    Recordar que no es pot fer servir el Console.Write 
+        //    dintre de l’objecte, el Console.Write s’ha 
+        //        de fer servir des del main().
+
+        public string CistellaText()
+        {
+
+            string cistellaText = "";
+
+            for(int i=0; i< NelementsCistella; i++)
+            {
+
+                cistellaText += ProductesCistella[i].Nom + "\n";
+                cistellaText += ProductesCistella[i].Preu + "\n";
+                cistellaText += CostTotal();
+
+            }
+
+
+
+            return cistellaText;
+
+        }
 
     }
 }
