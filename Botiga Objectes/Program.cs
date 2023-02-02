@@ -39,7 +39,7 @@ namespace Botiga_Objectes
                 {
 
                     case 0:
-                        string[] opcionsClient = new string[] { "1-afegir producte", "2-titola" };
+                        string[] opcionsClient = new string[] { "1-afegir producte", "2-titola","3-","4" };
                         menutest menuClient = new menutest(opcionsClient);
                         menuClient.MostrarMenu();
                         seleccio = menuClient.seleccio();
@@ -71,9 +71,13 @@ namespace Botiga_Objectes
                                     Console.WriteLine(cistella.CistellaText());
                                     Console.ReadLine();
                                     break;
+
+                                
                             }
 
-                            
+                            menuClient.MostrarMenu();
+                            seleccio = menuClient.seleccio();
+
                         }
 
                         break;
@@ -83,8 +87,9 @@ namespace Botiga_Objectes
 
                         break;
                 }
+                menu.MostrarMenu();
+                seleccio = menu.seleccio();
 
-                
             }
 
 
