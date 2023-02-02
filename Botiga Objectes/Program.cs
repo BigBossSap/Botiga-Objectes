@@ -19,10 +19,11 @@ namespace Botiga_Objectes
             botiga.AfegirProducte(taula);
             botiga.AfegirProducte(cadira);
             botiga.AfegirProducte(mesa);
-
-            menutest menu = new menutest();
+            string[] opcions = new string[] { "1-Client", "2-Administrador", "3-Prova","4-Zika"};
+            menutest menu = new menutest(opcions);
 
             menu.MostrarMenu();
+            int seleccio = menu.seleccio();
             //Console.WriteLine(botiga.BotigaText());
             //Console.WriteLine(botiga.BuscarProducte(mesa)); 
 
@@ -31,24 +32,22 @@ namespace Botiga_Objectes
             //Console.WriteLine(cadira.LlistarProducte());
 
             //Console.WriteLine(taula.PreuProducte()); 
-
-
-
-
-            int num = 0;
-            int num2 = 0;
-            num = Convert.ToInt32(Menu());
-            while (num != 3) {
-                switch (num)
+          
+            
+            while (seleccio != 3) {
+                switch (seleccio)
                 {
 
-                    case 1:
-                        num2 = Convert.ToInt32(Menu2());
-                        while (num2 != 4)
+                    case 0:
+                        string[] opcionsClient = new string[] { "1-afegir producte", "2-titola" };
+                        menutest menuClient = new menutest(opcionsClient);
+                        menuClient.MostrarMenu();
+                        seleccio = menuClient.seleccio();
+                        while (seleccio != 4)
                         {
-                            switch (num2)
+                            switch (seleccio)
                             {
-                                case 1:
+                                case 0:
 
                                     Console.WriteLine("Quin produce vols comprar?");
                                     Console.WriteLine(taula.LlistarProducte());
@@ -74,7 +73,7 @@ namespace Botiga_Objectes
                                     break;
                             }
 
-                            num2 = Convert.ToInt32(Menu2());
+                            
                         }
 
                         break;
@@ -85,41 +84,10 @@ namespace Botiga_Objectes
                         break;
                 }
 
-                num = Convert.ToInt32(Menu());
+                
             }
 
-            static string Menu()
-            {
-                Console.Clear();
-                string[] menu = {
-            ">1. Comprador\n",
-            ">2. Administrador\n",
-            
 
-            };
-                Console.WriteLine(new String('*', Console.WindowWidth));
-                Console.WriteLine();
-                Console.WriteLine(@"
-                ██████╗  ██████╗ ████████╗██╗ ██████╗  █████╗ 
-                ██╔══██╗██╔═══██╗╚══██╔══╝██║██╔════╝ ██╔══██╗
-                ██████╔╝██║   ██║   ██║   ██║██║  ███╗███████║
-                ██╔══██╗██║   ██║   ██║   ██║██║   ██║██╔══██║
-                ██████╔╝╚██████╔╝   ██║   ██║╚██████╔╝██║  ██║
-                ╚═════╝  ╚═════╝    ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═╝
-                                              
-");
-                foreach (string opcio in menu)
-                {
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine(opcio);
-
-                }
-                Console.WriteLine();
-                Console.WriteLine(new String('*', Console.WindowWidth));
-                Console.Write("Selecciona una opció: ");
-                string num = Console.ReadLine();
-                return num;
-            }
 
             static string Menu2()
             {
