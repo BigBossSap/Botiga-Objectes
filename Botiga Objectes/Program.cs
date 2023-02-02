@@ -42,10 +42,10 @@ namespace Botiga_Objectes
                         string[] opcionsClient = new string[] { "1-afegir producte", "2-titola","3-","4" };
                         menutest menuClient = new menutest(opcionsClient);
                         menuClient.MostrarMenu();
-                        seleccio = menuClient.seleccio();
-                        while (seleccio != 4)
+                        int seleccio2 = menuClient.seleccio();
+                        while (seleccio2 != 3)
                         {
-                            switch (seleccio)
+                            switch (seleccio2)
                             {
                                 case 0:
 
@@ -67,7 +67,7 @@ namespace Botiga_Objectes
                                         Console.ReadLine();
                                     }
                                     break;
-                                case 3:
+                                case 2:
                                     Console.WriteLine(cistella.CistellaText());
                                     Console.ReadLine();
                                     break;
@@ -76,7 +76,7 @@ namespace Botiga_Objectes
                             }
 
                             menuClient.MostrarMenu();
-                            seleccio = menuClient.seleccio();
+                            seleccio2 = menuClient.seleccio();
 
                         }
 
