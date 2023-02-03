@@ -30,11 +30,11 @@ namespace Botiga_Objectes
 
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.Blue;
+            bool bucle = true;
 
 
 
-
-            while (true)
+            while (bucle)
             {
                 Console.Clear();
 
@@ -102,7 +102,7 @@ namespace Botiga_Objectes
                 else if (entrada.Key == ConsoleKey.Enter)
                 {
                     Console.WriteLine("\nOpción seleccionada: " + opciones[opcionSeleccionada]);
-                    break;
+                    bucle = false;
                 }
             }
         }
