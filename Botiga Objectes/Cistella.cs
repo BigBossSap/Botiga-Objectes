@@ -38,7 +38,7 @@ namespace Botiga_Objectes
             
             bool trobat = false;
             int posBuscar = 0;
-
+            
 
             if (Moneder - producte.PreuProducte() * quantitat >= 0)
             {
@@ -53,6 +53,7 @@ namespace Botiga_Objectes
                             NelementsCistella++;
                             resultat = 1;
                             fi = true;
+                            
                         }
                         else
                         {
@@ -69,6 +70,7 @@ namespace Botiga_Objectes
             else
                 resultat = 0;
 
+            Moneder = Math.Round((Moneder - producte.PreuProducte() * quantitat), 2);
             return resultat;
 
 
@@ -80,7 +82,8 @@ namespace Botiga_Objectes
 
             for (int i = 0; i < NelementsCistella; i++) {
 
-                costTotal += ProductesCistella[i].Preu;
+                costTotal += ProductesCistella[i].Preu + (ProductesCistella[i].Preu * ProductesCistella[i].Iva/100);
+                
 
                     }
 
@@ -102,13 +105,15 @@ namespace Botiga_Objectes
             for(int i=0; i< NelementsCistella; i++)
             {
 
-                cistellaText += ProductesCistella[i].Nom + "\n";
-                cistellaText += ProductesCistella[i].Preu + "\n";
-                
+                cistellaText += $"Nom: <{ProductesCistella[i].Nom}>  \n";
+                cistellaText += $"Preu: {ProductesCistella[i].Preu}€ \n";
+                cistellaText += $"Iva:  {ProductesCistella[i].Iva}% \n";
 
+
+                
             }
 
-            cistellaText += CostTotal();
+            cistellaText += $"Cost Total Iva Inclos: {CostTotal()}";
 
             return cistellaText;
 

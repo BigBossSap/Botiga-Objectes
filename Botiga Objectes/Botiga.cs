@@ -83,7 +83,7 @@ namespace Botiga_Objectes
             bool trobat = false;
             for (int i = 0; i < ProductesBotiga.Length&&trobat==false; i++)
             {
-                if (ProductesBotiga[i].Nom.Equals(producte))
+                if (ProductesBotiga[i] != null && ProductesBotiga[i].Nom.Equals(producte))
                 {
                     pos = cont;
                     trobat = true;
@@ -186,7 +186,7 @@ namespace Botiga_Objectes
                 {
                     botigaText += $"Nom: {ProductesBotiga[i].Nom}\n";
                     botigaText += $"Preu: {ProductesBotiga[i].Preu}€ \n";
-                    botigaText += $"IVA: {ProductesBotiga[i].Iva}€\n";
+                    botigaText += $"IVA: {ProductesBotiga[i].Iva}%\n";
                 }
 
 

@@ -28,10 +28,11 @@ namespace Botiga_Objectes
         public void MostrarMenu()
         {
 
-            
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Blue;
 
-            
-            
+
+
 
             while (true)
             {
@@ -53,7 +54,7 @@ namespace Botiga_Objectes
                     if (i == opcionSeleccionada)
                     {
                         
-                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.BackgroundColor = ConsoleColor.White;
                         Console.WriteLine("* " + opciones[i]);
                        
@@ -61,14 +62,17 @@ namespace Botiga_Objectes
                     }
                     else
                     {
-                        Console.BackgroundColor = ConsoleColor.Black;
+
+                        Console.BackgroundColor = ConsoleColor.Blue;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("  " + opciones[i]);
                         
                     }
                     Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.BackgroundColor = ConsoleColor.Blue;
                 }
-                
+
                 ConsoleKeyInfo entrada = Console.ReadKey();
 
                 if (entrada.Key == ConsoleKey.UpArrow)
@@ -112,5 +116,12 @@ namespace Botiga_Objectes
             return seleccio;
 
         }
+
+        public string FormatMenu(string text)
+        {
+            text = new string(' ', 23) + text;
+            return text;
+        }
+
     }
 }
