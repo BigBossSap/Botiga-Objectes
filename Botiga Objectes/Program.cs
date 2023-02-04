@@ -41,11 +41,11 @@ namespace Botiga_Objectes
                 {
 
                     case 0:
-                        string[] opcionsClient = new string[] { "1-Afegir producte", "2-Mostrar Cistella","3-Cost Total-Diner restant","4-Enrere" };
+                        string[] opcionsClient = new string[] { "1-Afegir producte", "2-Mostrar Cistella","3-Cost Total-Diner restant","4-WOP","4-Enrere" };
                         menutest menuClient = new menutest(opcionsClient);
                         menuClient.MostrarMenu();
                         int seleccio2 = menuClient.seleccio();
-                        while (seleccio2 != 3)
+                        while (seleccio2 != 4)
                         {
                             switch (seleccio2)
                             {
@@ -87,6 +87,12 @@ namespace Botiga_Objectes
 
                                     break;
 
+                                case 3:
+                                    
+
+
+                                    break;
+
                                 
                             }
 
@@ -98,7 +104,7 @@ namespace Botiga_Objectes
                         break;
 
                     case 1:
-                        string[] opcionsAdmin = new string[] { "1-Afegir producte a la botiga", "2-Mostrar Cistella", "3-Cost Total-Diner restant", "4-Enrere" };
+                        string[] opcionsAdmin = new string[] { "1-Afegir producte a la botiga", "2-Mostrar Productes de la Botiga", "3-WOP", "4-Enrere" };
                         menutest menuAdmin = new menutest(opcionsAdmin);
                         menuAdmin.MostrarMenu();
                         int seleccio3 = menuAdmin.seleccio();
@@ -128,6 +134,12 @@ namespace Botiga_Objectes
                                     Console.WriteLine("Presiona");
                                     Console.ReadKey();
 
+
+                                    break;
+
+                                case 2:
+
+                                    //botiga.ModificarProducte(producte);
 
                                     break;
 
