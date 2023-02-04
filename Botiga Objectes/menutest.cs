@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Botiga_Objectes
 {
@@ -53,6 +54,7 @@ namespace Botiga_Objectes
 
                     if (i == opcionSeleccionada)
                     {
+                        Console.SetCursorPosition((Console.WindowWidth - 30) / 2, Console.CursorTop);
                         
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.BackgroundColor = ConsoleColor.White;
@@ -62,7 +64,8 @@ namespace Botiga_Objectes
                     }
                     else
                     {
-
+                        Console.SetCursorPosition((Console.WindowWidth - 30) / 2, Console.CursorTop);
+                        
                         Console.BackgroundColor = ConsoleColor.Blue;
                         Console.ForegroundColor = ConsoleColor.White;
                         Console.WriteLine("  " + opciones[i]);
