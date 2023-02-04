@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Botiga_Objectes
@@ -48,22 +49,28 @@ namespace Botiga_Objectes
                 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═╝
                                               
 ");
+                Console.SetCursorPosition((Console.WindowWidth - 40) / 2, Console.CursorTop);
+                Console.WriteLine("╔══════════════════════════════════╗");
 
                 for (int i = 0; i < opciones.Length; i++)
                 {
+                    Console.SetCursorPosition((Console.WindowWidth - 40) / 2, Console.CursorTop);
+                    Console.Write("║                                  ║");
 
                     if (i == opcionSeleccionada)
                     {
+                        Console.WriteLine();
                         Console.SetCursorPosition((Console.WindowWidth - 30) / 2, Console.CursorTop);
                         
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.BackgroundColor = ConsoleColor.White;
-                        Console.WriteLine("* " + opciones[i]);
+                        Console.WriteLine("*" + opciones[i]);
                        
 
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.SetCursorPosition((Console.WindowWidth - 30) / 2, Console.CursorTop);
                         
                         Console.BackgroundColor = ConsoleColor.Blue;
@@ -71,10 +78,14 @@ namespace Botiga_Objectes
                         Console.WriteLine("  " + opciones[i]);
                         
                     }
+                    
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Blue;
                 }
+                Console.SetCursorPosition((Console.WindowWidth - 40) / 2, Console.CursorTop);
+
+                Console.WriteLine("╚══════════════════════════════════╝");
 
                 ConsoleKeyInfo entrada = Console.ReadKey();
 
