@@ -229,6 +229,7 @@ namespace Botiga_Objectes
                         int nota_correccio = 0;
                         try
                         {
+                            Console.WriteLine();
                             Botiga botiga2 = new Botiga(3);
 
                             Producte producte1=new Producte();
@@ -283,7 +284,7 @@ namespace Botiga_Objectes
 
                             botiga2.ModificarProducte(producte1, "Pera", 5, 16);
                             if (botiga2.ProductesBotiga[0].Nom == "Pera")
-                                nota_correccio+=2;
+                                nota_correccio+=1;
                             else
                                 Console.WriteLine("No s'ha pogut cambiar el producte.");
 
@@ -291,15 +292,27 @@ namespace Botiga_Objectes
 
                             botiga2.EsborrarProducte(producte1);
                             if (botiga2.ProductesBotiga[0] == null)
-                                nota_correccio+=1;
+                                nota_correccio += 1;
                             else
                                 Console.WriteLine("No s'ha pogut borrar el producte");
 
 
                             //int b = 0;
                             //int a = 3 / b;
-                           
 
+                            botiga2.ProductesBotiga[0] = producte1;
+                            botiga2.ProductesBotiga[1] = producte2;
+
+
+
+                            if (botiga2.PrestatgeLLiure() == 2)
+                            {
+                                Console.WriteLine($"Prestatge lliure trobat a la posicio: {botiga2.PrestatgeLLiure()}");
+                                nota_correccio++;
+
+                            }
+                            
+                            
 
 
 
@@ -313,7 +326,7 @@ namespace Botiga_Objectes
 
                         Console.WriteLine("La teva nota és: " + nota_correccio);
 
-                        Console.WriteLine("Presiona");
+                        Console.WriteLine("Presiona una tecla per continuar");
                         Console.ReadLine();
 
                         break;

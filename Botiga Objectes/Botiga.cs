@@ -181,15 +181,17 @@ namespace Botiga_Objectes
         //    posició de la taula a on es pot afegir un producte. 
         //    Retorna -1 si la botiga està plena.
 
-        private void PrestatgeLLiure()
+        public int PrestatgeLLiure()
         {
             int i = 0;
             bool trobat = false;
-            while ((ProductesBotiga[i] != null) && (trobat == false) && (i < ProductesBotiga.Length))
+            int pos = 0;
+            while ((i <= ProductesBotiga.Length)&&(!trobat))
             {
                 if (ProductesBotiga[i] == null)
                 {
                     trobat = true;
+                    pos = i;
                 }
 
                 else
@@ -198,8 +200,8 @@ namespace Botiga_Objectes
 
             }
 
-            
 
+            return pos;
         
 
 
