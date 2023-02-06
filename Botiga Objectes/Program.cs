@@ -23,7 +23,7 @@ namespace Botiga_Objectes
             botiga.AfegirProducte(mesa);
             string[] opcions = new string[] { "1-Client", "2-Administrador","3-Joc de proves TEST", "4-Sortir"};
             menutest menu = new menutest(opcions);
-
+            
             menu.MostrarMenu();
             int seleccio = menu.seleccio();
             //Console.WriteLine(botiga.BotigaText());
@@ -303,7 +303,7 @@ namespace Botiga_Objectes
                             botiga2.ProductesBotiga[0] = producte1;
                             botiga2.ProductesBotiga[1] = producte2;
 
-
+                            
 
                             if (botiga2.PrestatgeLLiure() == 2)
                             {

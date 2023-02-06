@@ -66,15 +66,18 @@ namespace Botiga_Objectes
             {
                 if(ProductesBotiga[i] == null)
                 {
-                    
+                    cont++;
                 }
 
 
                 else if (ProductesBotiga[i].Nom == producte.Nom)
                 {
-                    pos = i;
-                    
+                    pos = cont;
+                    cont++;
                 }
+
+                cont++;
+                
 
             }
           return pos;
@@ -123,7 +126,7 @@ namespace Botiga_Objectes
                 int pos = BuscarProducte(producte);
                 ProductesBotiga[pos].Nom = nomNou;
                 ProductesBotiga[pos].Preu_sense_iva = preuNou;
-                ProductesBotiga[pos].Preu_sense_iva = ivaNou;
+                ProductesBotiga[pos].Iva = ivaNou;
                 trobat = true;
             }
 
