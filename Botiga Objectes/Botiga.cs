@@ -66,23 +66,18 @@ namespace Botiga_Objectes
             {
                 if(ProductesBotiga[i] == null)
                 {
-                    cont++;
+                    
                 }
 
 
                 else if (ProductesBotiga[i].Nom == producte.Nom)
                 {
-                    pos = cont;
-                    cont++;
+                    pos = i;
+                    
                 }
 
-                cont++;
-
             }
-
-
-
-            return pos;
+          return pos;
 
         }
 
