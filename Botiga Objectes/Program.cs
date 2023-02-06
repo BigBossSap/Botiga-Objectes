@@ -233,7 +233,7 @@ namespace Botiga_Objectes
 
                             Producte producte1=new Producte();
                             producte1.Nom = "Gelat";
-                            producte1.Preu = 2;
+                            producte1.Preu_sense_iva = 2;
                             producte1.Iva = 7;
                             //Afegir Producte
                             botiga2.AfegirProducte(producte1);
@@ -241,7 +241,7 @@ namespace Botiga_Objectes
 
                             Producte producte2 = new Producte();
                             producte2.Nom = "Pizza";
-                            producte2.Preu = 5;
+                            producte2.Preu_sense_iva = 5;
                             producte2.Iva = 12;
 
                             //Esborrar Producte

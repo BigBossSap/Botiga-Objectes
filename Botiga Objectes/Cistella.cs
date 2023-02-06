@@ -82,7 +82,7 @@ namespace Botiga_Objectes
 
             for (int i = 0; i < NelementsCistella; i++) {
 
-                costTotal += ProductesCistella[i].Preu + (ProductesCistella[i].Preu * ProductesCistella[i].Iva/100);
+                costTotal += ProductesCistella[i].Preu_sense_iva + (ProductesCistella[i].Preu_sense_iva * ProductesCistella[i].Iva/100);
                 
 
                     }
@@ -106,7 +106,7 @@ namespace Botiga_Objectes
             {
 
                 cistellaText += new string(' ', Console.WindowWidth / 3) + $"Nom: <{ProductesCistella[i].Nom}>  \n";
-                cistellaText += new string(' ', Console.WindowWidth / 3) + $"Preu: {ProductesCistella[i].Preu}€ \n";
+                cistellaText += new string(' ', Console.WindowWidth / 3) + $"Preu: {ProductesCistella[i].Preu_sense_iva}€ \n";
                 cistellaText += new string(' ', Console.WindowWidth / 3) + $"Iva:  {ProductesCistella[i].Iva}% \n";
 
 

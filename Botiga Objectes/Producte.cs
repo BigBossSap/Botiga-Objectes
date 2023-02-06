@@ -9,7 +9,7 @@ namespace Botiga_Objectes
     public class Producte
     {
         public string Nom { get; set; }
-        public double Preu { get; set; }
+        public double Preu_sense_iva { get; set; }
         public double Iva { get; set; }
 
 
@@ -22,7 +22,7 @@ namespace Botiga_Objectes
         public Producte(string producte, double preu, double iva)
         {
             Nom = producte;
-            Preu = preu;
+            Preu_sense_iva = preu;
             Iva = iva;
         }
 
@@ -31,7 +31,7 @@ namespace Botiga_Objectes
         {
             double preuTotal;
 
-            preuTotal = Preu + (Preu * Iva/100);
+            preuTotal = Preu_sense_iva + (Preu_sense_iva * Iva/100);
 
 
             return preuTotal;
@@ -41,7 +41,7 @@ namespace Botiga_Objectes
 
         public string LlistarProducte()
         {
-            string text = $"Producte: {Nom}, preu sense IVA: {Preu}, preu amb IVA: {PreuProducte()}, IVA aplicat: {Iva}";
+            string text = $"Producte: {Nom}, preu sense IVA: {Preu_sense_iva}, preu amb IVA: {PreuProducte()}, IVA aplicat: {Iva}";
 
 
             return text;

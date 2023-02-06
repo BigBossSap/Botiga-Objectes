@@ -127,8 +127,8 @@ namespace Botiga_Objectes
             {
                 int pos = BuscarProducte(producte);
                 ProductesBotiga[pos].Nom = nomNou;
-                ProductesBotiga[pos].Preu = preuNou;
-                ProductesBotiga[pos].Preu = ivaNou;
+                ProductesBotiga[pos].Preu_sense_iva = preuNou;
+                ProductesBotiga[pos].Preu_sense_iva = ivaNou;
                 trobat = true;
             }
 
@@ -220,7 +220,7 @@ namespace Botiga_Objectes
                 if (ProductesBotiga[i] != null)
                 {
                     botigaText += new string(' ',Console.WindowWidth/3)+ $"Nom: {ProductesBotiga[i].Nom}\n";
-                    botigaText += new string(' ', Console.WindowWidth / 3) + $"Preu: {ProductesBotiga[i].Preu}€ \n";
+                    botigaText += new string(' ', Console.WindowWidth / 3) + $"Preu: {ProductesBotiga[i].Preu_sense_iva}€ \n";
                     botigaText += new string(' ', Console.WindowWidth / 3) + $"IVA: {ProductesBotiga[i].Iva}%\n";
                 }
 
