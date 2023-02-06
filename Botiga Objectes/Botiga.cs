@@ -222,7 +222,6 @@ namespace Botiga_Objectes
 
             }
 
-
             return pos;
         
 
