@@ -55,7 +55,7 @@ namespace Botiga_Objectes
                                     Console.WriteLine();
                                     Console.WriteLine("Productes disponibles: ");
                                     Console.WriteLine(botiga.BotigaText());
-                                    Console.WriteLine("Quin produce vols comprar?");
+                                    Console.WriteLine("Quin producte vols comprar?");
                                     string producteComprar = Console.ReadLine();
                                     
                                     if (botiga.BuscarProducte(producteComprar) != -1)
