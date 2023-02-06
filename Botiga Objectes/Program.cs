@@ -244,7 +244,7 @@ namespace Botiga_Objectes
                             producte2.Preu = 5;
                             producte2.Iva = 12;
 
-                            //Esborrar Producre
+                            //Esborrar Producte
                             botiga2.EsborrarProducte(producte2);
                             if (botiga2.BuscarProducte(producte2) < 0) nota_correccio += 2;
 
@@ -252,7 +252,10 @@ namespace Botiga_Objectes
                             Cistella cistella2 = new Cistella(10, 50);
                             //Comprar Producte
                             cistella2.ComprarProducte(producte1, 2);
+                            if(cistella2.ProductesCistella[0].Nom=="Gelat"&& cistella2.ProductesCistella[1].Nom == "Gelat")
                             nota_correccio++;
+                            else
+                                Console.WriteLine("No s'han pogut afegir els productes.");
 
                             //Cost Total Productes Cistella
                             double cost = cistella2.CostTotal();                                                 

@@ -11,7 +11,7 @@ namespace Botiga_Objectes
 
         public string Data { get; set; }
 
-        private Producte[] ProductesCistella;
+        public Producte[] ProductesCistella;
 
         private int NelementsCistella;
 
