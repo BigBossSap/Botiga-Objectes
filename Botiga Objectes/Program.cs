@@ -57,18 +57,18 @@ namespace Botiga_Objectes
                                     Console.WriteLine(botiga.BotigaText());
                                     Console.WriteLine("Quin producte vols comprar?");
                                     string producteComprar = Console.ReadLine();
-                                    
-                                    if (botiga.BuscarProducte(producteComprar) != -1)
+                                    Producte compra = botiga.TornarProducte(producteComprar);
+                                    if (compra != null)
 
 
                                     {
                                         Console.WriteLine("Quantitat:");
                                         int quantitat = Convert.ToInt32(Console.ReadLine());
-                                        cistella.ComprarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteComprar)], quantitat);
+                                        int resultat= cistella.ComprarProducte(compra, quantitat);
 
-                                        if (cistella.ComprarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteComprar)], quantitat)==1)
+                                        if (resultat==1)
                                             Console.WriteLine($"Producte {producteComprar} afegit a la cistella {quantitat} veguades");
-                                        else if (cistella.ComprarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteComprar)], quantitat)==0)
+                                        else if (resultat==0)
                                             Console.WriteLine("Insuficients diners o espai a la cistella.");
 
                                         Console.WriteLine("Presiona qualsevol tecla pero continuar.");
@@ -172,7 +172,8 @@ namespace Botiga_Objectes
                                         int nouPreu = Convert.ToInt32(Console.ReadLine());
                                         Console.WriteLine("Nou Iva:");
                                         int nouIva = Convert.ToInt32(Console.ReadLine());
-                                        botiga.ModificarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteModificar)], nouNom, nouPreu, nouIva);
+                                        Producte Modificar = botiga.TornarProducte(producteModificar);
+                                        botiga.ModificarProducte(Modificar, nouNom, nouPreu, nouIva);
                                     }
                                     else
                                     {

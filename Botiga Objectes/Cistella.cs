@@ -93,6 +93,9 @@ namespace Botiga_Objectes
             return costTotal;
         }
 
+        
+
+
         //ToString() : retorna de forma amigable un string amb tots els 
         //    productes.Retorna també el total amb iva inclòs.
         //    Recordar que no es pot fer servir el Console.Write 

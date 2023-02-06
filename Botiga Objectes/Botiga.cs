@@ -112,6 +112,31 @@ namespace Botiga_Objectes
 
         }
 
+        public Producte TornarProducte(string nom)
+        {
+            int cont = 0;
+            int pos = 0;
+            for (int i = 0; i < ProductesBotiga.Length; i++)
+            {
+                if (ProductesBotiga[i] == null)
+                {
+
+                }
+
+
+                else if (ProductesBotiga[i].Nom == nom)
+                {
+                    pos = cont;
+                    cont++;
+                }
+
+                cont++;
+
+
+            }
+            return ProductesBotiga[pos];
+        }
+
         //ModificarProducte(Producte producte, String nou_nom, double nou_preu) : Mètode
         //    públic.Donat un producte hem de buscar-lo a la taula de productes per saber
         //    quina posició de la taula ocupa, per així
@@ -121,14 +146,13 @@ namespace Botiga_Objectes
         {
             bool trobat = false;
 
-            if (BuscarProducte(producte) != -1)
-            {
-                int pos = BuscarProducte(producte);
-                ProductesBotiga[pos].Nom = nomNou;
-                ProductesBotiga[pos].Preu_sense_iva = preuNou;
-                ProductesBotiga[pos].Iva = ivaNou;
+            
+                
+                producte.Nom = nomNou;
+                producte.Preu_sense_iva = preuNou;
+                producte.Iva = ivaNou;
                 trobat = true;
-            }
+            
 
             return trobat;
 
