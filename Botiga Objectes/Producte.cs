@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Botiga_Objectes
 {
-   public class Producte
+    public class Producte
     {
         public string Nom { get; set; }
         public double Preu { get; set; }
@@ -14,7 +14,11 @@ namespace Botiga_Objectes
 
 
 
+        public Producte()
+            {
 
+
+                        }
         public Producte(string producte, double preu, double iva)
         {
             Nom = producte;

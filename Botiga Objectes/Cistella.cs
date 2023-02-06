@@ -18,11 +18,11 @@ namespace Botiga_Objectes
         public double Moneder;
 
 
-        public Cistella( double diners)
+        public Cistella( int productes, double diners)
         {
             
             Moneder = diners;
-            ProductesCistella = new Producte[20];
+            ProductesCistella = new Producte[productes];
             NelementsCistella = 0;
 
         }
@@ -31,7 +31,7 @@ namespace Botiga_Objectes
         //       tantes vegades com indiqui quantitat.
 
 
-        public int AfegirProducteCistella(Producte producte, int quantitat)
+        public int ComprarProducte(Producte producte, int quantitat)
         {
             // 0 = no hi ha diners, 1=afegit, -1 No afegit per espai.
             int resultat = -1;
