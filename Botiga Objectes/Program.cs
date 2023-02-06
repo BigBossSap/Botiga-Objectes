@@ -100,7 +100,7 @@ namespace Botiga_Objectes
                                     break;
                                 case 2:
                                     
-                                    Console.WriteLine(cistella.CostTotal());
+                                    Console.WriteLine(cistella.cistellaCostTotal());
                                     Console.WriteLine(cistella.Moneder);
                                     Console.WriteLine("Presiona qualsevol tecla pero continuar.");
                                     Console.ReadLine();
@@ -257,10 +257,24 @@ namespace Botiga_Objectes
                             else
                                 Console.WriteLine("No s'han pogut afegir els productes.");
 
-                            //Cost Total Productes Cistella
-                            double cost = cistella2.CostTotal();                                                 
+                            //Error per superar capacitat de la cistella:
 
-                                if ((cistella2.CostTotal() >= 4.28) && (cistella2.CostTotal() <= 4.30))
+                            cistella2.ComprarProducte(producte1, 30);
+                            if (cistella2.ProductesCistella[3]== null)
+                            {
+                                Console.WriteLine("No s'han pogut afegir els productes. CORRECTE");
+                                nota_correccio++;
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("s'han pogut afegir els productes. INCORRECTE");
+                                
+                            }
+                            //Cost Total Productes Cistella
+                            double cost = cistella2.cistellaCostTotal();                                                 
+
+                                if ((cistella2.cistellaCostTotal() >= 4.28) && (cistella2.cistellaCostTotal() <= 4.30))
                                 nota_correccio += 2;
                                 else
                                 Console.WriteLine("Cost incorrecte");
@@ -277,13 +291,18 @@ namespace Botiga_Objectes
 
                             botiga2.EsborrarProducte(producte1);
                             if (botiga2.ProductesBotiga[0] == null)
-                                nota_correccio+=2;
+                                nota_correccio+=1;
                             else
                                 Console.WriteLine("No s'ha pogut borrar el producte");
 
 
                             //int b = 0;
                             //int a = 3 / b;
+                           
+
+
+
+
 
 
                         }

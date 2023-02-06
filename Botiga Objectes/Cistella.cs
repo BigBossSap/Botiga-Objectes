@@ -76,7 +76,7 @@ namespace Botiga_Objectes
 
         }
 
-        public double CostTotal()
+        public double cistellaCostTotal()
         {
             double costTotal=0;
 
@@ -113,7 +113,7 @@ namespace Botiga_Objectes
                 
             }
 
-            cistellaText += $"Cost Total Iva Inclos: {CostTotal()}";
+            cistellaText += $"Cost Total Iva Inclos: {cistellaCostTotal()}";
 
             return cistellaText;
 
