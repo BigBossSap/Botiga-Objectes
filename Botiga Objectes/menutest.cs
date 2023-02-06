@@ -49,13 +49,11 @@ namespace Botiga_Objectes
                 ╚═════╝  ╚═════╝    ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═╝
                                               
 ");
-                Console.SetCursorPosition((Console.WindowWidth - 40) / 2, Console.CursorTop);
-                Console.WriteLine("╔══════════════════════════════════╗");
+                
 
                 for (int i = 0; i < opciones.Length; i++)
                 {
-                    Console.SetCursorPosition((Console.WindowWidth - 40) / 2, Console.CursorTop);
-                    Console.Write("║                                  ║");
+                    
 
                     if (i == opcionSeleccionada)
                     {
@@ -83,9 +81,9 @@ namespace Botiga_Objectes
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.BackgroundColor = ConsoleColor.Blue;
                 }
-                Console.SetCursorPosition((Console.WindowWidth - 40) / 2, Console.CursorTop);
+                
 
-                Console.WriteLine("╚══════════════════════════════════╝");
+                
 
                 ConsoleKeyInfo entrada = Console.ReadKey();
 
@@ -115,7 +113,7 @@ namespace Botiga_Objectes
                 }
                 else if (entrada.Key == ConsoleKey.Enter)
                 {
-                    Console.WriteLine("\nOpción seleccionada: " + opciones[opcionSeleccionada]);
+                    
                     bucle = false;
                 }
             }

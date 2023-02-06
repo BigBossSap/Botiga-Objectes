@@ -40,7 +40,7 @@ namespace Botiga_Objectes
             int posBuscar = 0;
             
 
-            if (Moneder - producte.PreuProducte() * quantitat >= 0)
+            if (Moneder - producte.PreuProducte() * quantitat >= 0 && quantitat<ProductesCistella.Length)
             {
                 for (int j = 0; j < quantitat && posBuscar < ProductesCistella.Length; j++)
                 {
@@ -105,9 +105,9 @@ namespace Botiga_Objectes
             for(int i=0; i< NelementsCistella; i++)
             {
 
-                cistellaText += $"Nom: <{ProductesCistella[i].Nom}>  \n";
-                cistellaText += $"Preu: {ProductesCistella[i].Preu}€ \n";
-                cistellaText += $"Iva:  {ProductesCistella[i].Iva}% \n";
+                cistellaText += new string(' ', Console.WindowWidth / 3) + $"Nom: <{ProductesCistella[i].Nom}>  \n";
+                cistellaText += new string(' ', Console.WindowWidth / 3) + $"Preu: {ProductesCistella[i].Preu}€ \n";
+                cistellaText += new string(' ', Console.WindowWidth / 3) + $"Iva:  {ProductesCistella[i].Iva}% \n";
 
 
                 

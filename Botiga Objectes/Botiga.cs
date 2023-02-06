@@ -64,10 +64,20 @@ namespace Botiga_Objectes
             int cont = 0;
             for(int i=0; i< ProductesBotiga.Length; i++)
             {
-                if (ProductesBotiga[i].Nom == producte.Nom)
-                    pos = cont;
+                if(ProductesBotiga[i] == null)
+                {
+                    cont++;
+                }
 
-             cont++;
+
+                else if (ProductesBotiga[i].Nom == producte.Nom)
+                {
+                    pos = cont;
+                    cont++;
+                }
+
+                cont++;
+
             }
 
 
@@ -80,15 +90,22 @@ namespace Botiga_Objectes
         {
             int pos = -1;
             int cont = 0;
-            bool trobat = false;
-            for (int i = 0; i < ProductesBotiga.Length&&trobat==false; i++)
+            for (int i = 0; i < ProductesBotiga.Length; i++)
             {
-                if (ProductesBotiga[i] != null && ProductesBotiga[i].Nom.Equals(producte))
+                if (ProductesBotiga[i] == null)
+                {
+                    cont++;
+                }
+
+
+                else if (ProductesBotiga[i].Nom == producte)
                 {
                     pos = cont;
-                    trobat = true;
+                    cont++;
                 }
+
                 cont++;
+
             }
 
 
@@ -102,7 +119,7 @@ namespace Botiga_Objectes
         //    quina posició de la taula ocupa, per així
         //    després modificar les dades. Retorna un booleà amb true si l’ha modificat i false si ho ha pogut.
 
-        public bool ModificarProducte(Producte producte, string nomNou, double preuNou)
+        public bool ModificarProducte(Producte producte, string nomNou, double preuNou, double ivaNou)
         {
             bool trobat = false;
 
@@ -111,6 +128,7 @@ namespace Botiga_Objectes
                 int pos = BuscarProducte(producte);
                 ProductesBotiga[pos].Nom = nomNou;
                 ProductesBotiga[pos].Preu = preuNou;
+                ProductesBotiga[pos].Preu = ivaNou;
                 trobat = true;
             }
 
@@ -118,6 +136,23 @@ namespace Botiga_Objectes
 
 
         }
+
+        //public bool ModificarProducte(string producte, string nomNou, double preuNou)
+        //{
+        //    bool trobat = false;
+
+        //    if (BuscarProducte(producte) != -1)
+        //    {
+        //        int pos = BuscarProducte(producte);
+        //        ProductesBotiga[pos].Nom = nomNou;
+        //        ProductesBotiga[pos].Preu = preuNou;
+        //        trobat = true;
+        //    }
+
+        //    return trobat;
+
+
+        //}
 
         //EsborrarProducte(Producte producte) : Mètode públic.Donat un producte hem de buscar-lo a
         //    la taula de productes per saber quina posició de la taula ocupa, 
@@ -184,9 +219,9 @@ namespace Botiga_Objectes
             {
                 if (ProductesBotiga[i] != null)
                 {
-                    botigaText += $"Nom: {ProductesBotiga[i].Nom}\n";
-                    botigaText += $"Preu: {ProductesBotiga[i].Preu}€ \n";
-                    botigaText += $"IVA: {ProductesBotiga[i].Iva}%\n";
+                    botigaText += new string(' ',Console.WindowWidth/3)+ $"Nom: {ProductesBotiga[i].Nom}\n";
+                    botigaText += new string(' ', Console.WindowWidth / 3) + $"Preu: {ProductesBotiga[i].Preu}€ \n";
+                    botigaText += new string(' ', Console.WindowWidth / 3) + $"IVA: {ProductesBotiga[i].Iva}%\n";
                 }
 
 

@@ -36,22 +36,24 @@ namespace Botiga_Objectes
             //Console.WriteLine(taula.PreuProducte()); 
           
             
-            while (seleccio != 3) {
+            while (seleccio != 2) {
                 switch (seleccio)
                 {
 
                     case 0:
-                        string[] opcionsClient = new string[] { "1-Afegir producte", "2-Mostrar Cistella","3-Cost Total-Diner restant","4-WOP","4-Enrere" };
+                        string[] opcionsClient = new string[] { "1-Afegir producte", "2-Mostrar Cistella","3-Cost Total-Diner restant","4-Enrere" };
                         menutest menuClient = new menutest(opcionsClient);
                         menuClient.MostrarMenu();
                         int seleccio2 = menuClient.seleccio();
-                        while (seleccio2 != 4)
+                        while (seleccio2 != 3)
                         {
                             switch (seleccio2)
                             {
                                 case 0:
 
-                                    
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    Console.WriteLine("Productes disponibles: ");
                                     Console.WriteLine(botiga.BotigaText());
                                     Console.WriteLine("Quin produce vols comprar?");
                                     string producteComprar = Console.ReadLine();
@@ -63,15 +65,34 @@ namespace Botiga_Objectes
                                         Console.WriteLine("Quantitat:");
                                         int quantitat = Convert.ToInt32(Console.ReadLine());
                                         cistella.AfegirProducteCistella(botiga.ProductesBotiga[botiga.BuscarProducte(producteComprar)], quantitat);
+
+                                        if (cistella.AfegirProducteCistella(botiga.ProductesBotiga[botiga.BuscarProducte(producteComprar)], quantitat)==1)
+                                            Console.WriteLine($"Producte {producteComprar} afegit a la cistella {quantitat} veguades");
+                                        else if (cistella.AfegirProducteCistella(botiga.ProductesBotiga[botiga.BuscarProducte(producteComprar)], quantitat)==0)
+                                            Console.WriteLine("Insuficients diners o espai a la cistella.");
+
+                                        Console.WriteLine("Presiona qualsevol tecla pero continuar.");
+                                        Console.ReadLine();
+
                                     }
+
+                                    
 
                                     else
                                     {
                                         Console.WriteLine("Producte no trobat");
                                         Console.ReadLine();
+                                        Console.WriteLine("Presiona qualsevol tecla pero continuar.");
+                                        Console.ReadLine();
                                     }
+
+
                                     break;
                                 case 1:
+                                    
+                                    Console.Clear();
+                                    Console.WriteLine();
+                                    
                                     Console.WriteLine(cistella.CistellaText());
                                     Console.WriteLine();
                                     Console.WriteLine("Presiona qualsevol tecla pero continuar.");
@@ -87,11 +108,7 @@ namespace Botiga_Objectes
 
                                     break;
 
-                                case 3:
-                                    
-
-
-                                    break;
+                                
 
                                 
                             }
@@ -104,12 +121,12 @@ namespace Botiga_Objectes
                         break;
 
                     case 1:
-                        string[] opcionsAdmin = new string[] { "1-Afegir producte a la botiga", "2-Mostrar Productes de la Botiga", "3-WOP", "4-Enrere" };
+                        string[] opcionsAdmin = new string[] { "1-Afegir Producte a la Botiga", "2-Mostrar Productes de la Botiga", "3-Modificar Producte", "4-Eliminar Producte", "5-Enrere" };
                         menutest menuAdmin = new menutest(opcionsAdmin);
                         menuAdmin.MostrarMenu();
                         int seleccio3 = menuAdmin.seleccio();
 
-                        while (seleccio3 != 3)
+                        while (seleccio3 != 4)
                         {
 
                             switch (seleccio3)
@@ -130,6 +147,8 @@ namespace Botiga_Objectes
 
 
                                 case 1:
+                                    
+                                    Console.WriteLine();
                                     Console.WriteLine(botiga.BotigaText()); 
                                     Console.WriteLine("Presiona");
                                     Console.ReadKey();
@@ -138,8 +157,55 @@ namespace Botiga_Objectes
                                     break;
 
                                 case 2:
+                                   
+                                    Console.WriteLine(botiga.BotigaText());
+                                    Console.WriteLine("Quin produce vols modificar?");
+                                    string producteModificar = Console.ReadLine();
+                                    if (botiga.BuscarProducte(producteModificar) != -1)
 
-                                    //botiga.ModificarProducte(producte);
+
+                                    {
+                                        Console.WriteLine("Nou nom: ");
+                                        string nouNom = Console.ReadLine();
+                                        Console.WriteLine("Nou Preu:");
+                                        int nouPreu = Convert.ToInt32(Console.ReadLine());
+                                        Console.WriteLine("Nou Iva:");
+                                        int nouIva = Convert.ToInt32(Console.ReadLine());
+                                        botiga.ModificarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteModificar)], nouNom, nouPreu, nouIva);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Producte no trobat");
+                                        Console.ReadLine();
+                                    }
+
+                                    Console.WriteLine("Presiona");
+                                    Console.ReadKey();
+
+
+                                    break;
+
+                                case 3:
+
+
+                                    Console.WriteLine(botiga.BotigaText());
+                                    Console.WriteLine("Quin produce vols eliminar?");
+                                    string producteEliminar = Console.ReadLine();
+                                    if (botiga.BuscarProducte(producteEliminar) != -1)
+
+
+                                    {
+                                        
+                                        
+                                        botiga.EsborrarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteEliminar)]);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Producte no trobat");
+                                        Console.ReadLine();
+                                    }
+                                    Console.WriteLine("Presiona");
+                                    Console.ReadKey();
 
                                     break;
 
@@ -161,6 +227,7 @@ namespace Botiga_Objectes
                 seleccio = menu.seleccio();
 
             }
+            Console.WriteLine("Goodbye");
 
 
 
