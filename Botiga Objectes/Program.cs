@@ -162,7 +162,7 @@ namespace Botiga_Objectes
                                     Console.WriteLine(botiga.BotigaText());
                                     Console.WriteLine("Quin produce vols modificar?");
                                     string producteModificar = Console.ReadLine();
-                                    if (botiga.BuscarProducte(producteModificar) != -1)
+                                    if (botiga.TornarProducte(producteModificar) != null)
 
 
                                     {
@@ -193,13 +193,13 @@ namespace Botiga_Objectes
                                     Console.WriteLine(botiga.BotigaText());
                                     Console.WriteLine("Quin produce vols eliminar?");
                                     string producteEliminar = Console.ReadLine();
-                                    if (botiga.BuscarProducte(producteEliminar) != -1)
+                                    if (botiga.TornarProducte(producteEliminar) != null)
 
 
                                     {
                                         
                                         
-                                        botiga.EsborrarProducte(botiga.ProductesBotiga[botiga.BuscarProducte(producteEliminar)]);
+                                        botiga.EsborrarProducte(botiga.TornarProducte(producteEliminar));
                                     }
                                     else
                                     {

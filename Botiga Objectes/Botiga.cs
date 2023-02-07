@@ -84,7 +84,7 @@ namespace Botiga_Objectes
 
         }
 
-        public int BuscarProducte(string producte)
+        private int BuscarProducte(string producte)
         {
             int pos = -1;
             int cont = 0;
