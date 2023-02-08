@@ -14,7 +14,7 @@ namespace Botiga_Objectes
 
             Producte taula = new Producte("taula", 100, 21);
             Producte cadira = new Producte("cadira", 80, 16);
-            Producte mesa = new Producte("mesa", 75, 8);
+            Producte mesa = new Producte("nevera", 75, 8);
             Botiga botiga = new Botiga(20);
             Cistella cistella = new Cistella(20,2000);
             botiga.Nom = "Mercadona";

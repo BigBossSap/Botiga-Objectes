@@ -51,7 +51,12 @@ namespace Botiga_Objectes
                     {
                         if (ProductesCistella[posBuscar] == null)
                         {
-                            ProductesCistella[posBuscar] = producte;
+                            Producte p = new Producte();
+                            p.Nom = producte.Nom;
+                            p.Preu_sense_iva = producte.Preu_sense_iva;
+                            p.Iva = producte.Iva;
+
+                            ProductesCistella[posBuscar] = p;
                             NelementsCistella++;
                             resultat = 1;
                             fi = true;
