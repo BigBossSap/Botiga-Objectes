@@ -33,10 +33,10 @@ namespace Botiga_Objectes
         //       tantes vegades com indiqui quantitat.
 
 
-        public int ComprarProducte(Producte producte, int quantitat)
+        public bool ComprarProducte(Producte producte, int quantitat)
         {
             // 0 = no hi ha diners, 1=afegit, -1 No afegit per espai.
-            int resultat = -1;
+            
             
             bool trobat = false;
             int posBuscar = 0;
@@ -58,7 +58,7 @@ namespace Botiga_Objectes
 
                             ProductesCistella[posBuscar] = p;
                             NelementsCistella++;
-                            resultat = 1;
+                            trobat = true;
                             fi = true;
                             
                         }
@@ -67,18 +67,17 @@ namespace Botiga_Objectes
                             posBuscar++;
                             if (posBuscar >= ProductesCistella.Length)
                             {
-                                resultat = -1;
+                                
                                 fi = true;
                             }
                         }
                     }
                 }
             }
-            else
-                resultat = 0;
+            
 
             Moneder = Math.Round((Moneder - producte.PreuProducte() * quantitat), 2);
-            return resultat;
+            return trobat;
 
 
         }
